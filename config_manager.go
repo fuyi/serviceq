@@ -3,11 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"model"
 	"net/url"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/fuyi/serviceq/model"
 )
 
 const (
@@ -32,7 +33,8 @@ const (
 
 func getPropertyFilePath() string {
 
-	return SQ_WD + "/config/sq.properties"
+	// return SQ_WD + "/config/sq.properties"
+	return "./sq.properties"
 }
 
 func getProperties(confFilePath string) (model.ServiceQProperties, error) {

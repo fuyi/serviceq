@@ -2,48 +2,49 @@ package algorithm
 
 import (
 	"testing"
-	"model"
+
+	"github.com/fuyi/serviceq/model"
 )
 
 func TestServiceIndexWithinBoundR1(t *testing.T) {
 
 	var params = []struct {
 		sqp *model.ServiceQProperties
-		ic int
-		rt int
+		ic  int
+		rt  int
 	}{
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					5,
-					0},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			5,
+			0},
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					8,
-					0},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			8,
+			0},
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					1,
-					0},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			1,
+			0},
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					2,
-					0},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			2,
+			0},
 	}
 
 	for _, prm := range params {
@@ -62,41 +63,41 @@ func TestServiceIndexWithinBoundRn(t *testing.T) {
 
 	var params = []struct {
 		sqp *model.ServiceQProperties
-		ic int
-		rt int
+		ic  int
+		rt  int
 	}{
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					59,
-					3},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			59,
+			3},
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					8,
-					2},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			8,
+			2},
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					14,
-					-1},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			14,
+			-1},
 		{&model.ServiceQProperties{
 			RequestErrorLog: map[string]uint64{"s0": 1, "s1": 2},
 			ServiceList: []model.Endpoint{
-						model.Endpoint {QualifiedUrl:"s0"},
-						model.Endpoint {QualifiedUrl: "s1"},
-					}},
-					20,
-					-1},
+				model.Endpoint{QualifiedUrl: "s0"},
+				model.Endpoint{QualifiedUrl: "s1"},
+			}},
+			20,
+			-1},
 	}
 
 	for _, prm := range params {

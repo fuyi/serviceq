@@ -1,8 +1,9 @@
 package errorlog
 
 import (
-	"model"
 	"testing"
+
+	"github.com/fuyi/serviceq/model"
 )
 
 func BenchmarkConcurrentErrorIncrements(b *testing.B) {

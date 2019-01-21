@@ -2,7 +2,8 @@ package algorithm
 
 import (
 	"math"
-	"model"
+
+	"github.com/fuyi/serviceq/model"
 )
 
 func ChooseServiceIndex(sqp *model.ServiceQProperties, initialChoice int, retry int) int {
@@ -34,7 +35,7 @@ func ChooseServiceIndex(sqp *model.ServiceQProperties, initialChoice int, retry 
 			prefixes := make([]float64, slLen)
 			for i, n := range (*sqp).ServiceList {
 				errCnt := (*sqp).RequestErrorLog[n.QualifiedUrl]
-				weights[i] = math.Ceil(float64(maxErr) / float64(errCnt + 1))
+				weights[i] = math.Ceil(float64(maxErr) / float64(errCnt+1))
 			}
 			for i, _ := range weights {
 				if i == 0 {

@@ -1,9 +1,10 @@
 package errorlog
 
 import (
-	"model"
 	"log"
 	"os"
+
+	"github.com/fuyi/serviceq/model"
 )
 
 var logger *log.Logger
@@ -13,7 +14,7 @@ func init() {
 	logFileLocation := "/opt/serviceq/logs/serviceq_error.log"
 	file, err := os.OpenFile(logFileLocation, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 	if err == nil {
-		logger = log.New(file, "ServiceQ: ", log.Ldate | log.Ltime)
+		logger = log.New(file, "ServiceQ: ", log.Ldate|log.Ltime)
 	}
 }
 

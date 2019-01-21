@@ -3,9 +3,10 @@ package main
 import (
 	"crypto/rand"
 	"crypto/tls"
-	"model"
 	"net"
 	"time"
+
+	"github.com/fuyi/serviceq/model"
 )
 
 func getListener(sqp model.ServiceQProperties) (net.Listener, error) {

@@ -1,8 +1,9 @@
 package main
 
 import (
-	"model"
 	"testing"
+
+	"github.com/fuyi/serviceq/model"
 )
 
 type Properties struct {

@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"model"
 	"net"
 	"os"
-	"protocol"
 	"time"
+
+	"github.com/fuyi/serviceq/model"
+	"github.com/fuyi/serviceq/protocol"
 )
 
 func main() {
